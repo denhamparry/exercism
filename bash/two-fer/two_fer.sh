@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-name=$1
+name="you"
 
-if [[ -n "$name" ]]; then
-    echo "One for $name, one for me."
-else
-    echo "One for you, one for me."
+if [ $# -gt 0 ]; then
+    name=$1
 fi
+
+echo "One for $name, one for me."
