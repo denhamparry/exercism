@@ -4,17 +4,20 @@ import "errors"
 
 // Distance calculates the Hamming Distance between two strings.
 func Distance(a, b string) (int, error) {
-	
-	if len(a) != len(b) {
-		return -1, errors.New("Sequences have different lengths")
+	aa := []rune(a)
+	bb := []rune(b)
+
+	if len(aa) != len(bb) {
+		return 0, errors.New("sequences have different lengths")
 	}
 
 	hammingDistance := 0
-	
-	for i := range a {
-		if(a[i] != b[i]) {
+
+	for i := 0; i < len(aa); i++ {
+		if aa[i] != bb[i] {
 			hammingDistance++
 		}
 	}
+
 	return hammingDistance, nil
 }
